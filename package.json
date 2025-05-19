@@ -1,6 +1,6 @@
 {
-  "name": "video-preview-app",
-  "version": "0.3.1",
+  "name": "directory-watcher-app",
+  "version": "0.0.0",
   "main": "dist/main.js",
   "scripts": {
     "dev": "rimraf dist && run-p dev:webpack dev:electron",
@@ -21,7 +21,7 @@
     ]
   },
   "build": {
-    "productName": "SBL-VideoPreviewApp",
+    "productName": "SBL-DirectoryWatcherApp",
     "appId": "com.sublimation.video-preview-app",
     "directories": {
       "output": "build/${version}/"
@@ -29,15 +29,9 @@
     "files": [
       "dist",
       "node_modules",
-      "package.json",
-      "resources/ffmpeg"
+      "package.json"
     ],
-    "extraResources": [
-      {
-        "from": "resources/ffmpeg/",
-        "to": "ffmpeg/"
-      }
-    ],
+    "extraResources": [],
     "win": {
       "icon": "assets/icon.ico",
       "target": "nsis",
@@ -50,7 +44,7 @@
     "publish": {
       "provider": "github",
       "owner": "reo3190",
-      "repo": "Video-Preview-App"
+      "repo": "Directory-Watcher-App"
     }
   },
   "description": "",
@@ -80,19 +74,13 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@napi-rs/canvas": "^0.1.65",
-    "@popcornjs/core": "^2.8.1",
     "electron-progressbar": "^2.2.1",
     "electron-updater": "^6.1.4",
-    "perfect-freehand": "^1.2.2",
-    "popcorn": "^0.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.4.0",
     "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^7.1.1",
-    "react-spring": "^9.7.5",
-    "video.js": "^8.21.0",
-    "videojs-playlist": "^5.2.0"
+    "react-spring": "^9.7.5"
   }
 }

@@ -7,48 +7,12 @@ import {
   useEffect,
   useRef,
 } from "react";
-import { useNavigate, useLocation, To } from "react-router-dom";
 // ---------------------------------------------------------
 
 const defaultShortcuts: ShortCuts = {
   test: {
     key: "f",
     shiftKey: true,
-  },
-  // Video
-  SeekDownMarker: {
-    key: "ArrowLeft",
-    ctrlKey: true,
-  },
-  SeekUpMarker: {
-    key: "ArrowRight",
-    ctrlKey: true,
-  },
-  ClickVideo: {
-    key: " ",
-  },
-  VolumeUp: {
-    key: "ArrowUp",
-  },
-  VolumeDown: {
-    key: "ArrowDown",
-  },
-  NextVideo: {
-    key: "PageDown",
-  },
-  PrevVideo: {
-    key: "PageUp",
-  },
-  CopyPaint: {
-    key: "c",
-    ctrlKey: true,
-  },
-  PastePaint: {
-    key: "v",
-    ctrlKey: true,
-  },
-  Fullscreen: {
-    key: "@",
   },
 };
 
