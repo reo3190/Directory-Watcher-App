@@ -1,13 +1,13 @@
 html {
-  font-size: 12px !important;
+  // font-size: 12px !important;
   // font-family: "Roboto", sans-serif;
 }
 
 body {
   // background: #333;
-  background: #111;
-  color: #eee;
-  overflow: hidden;
+  // background: var(--bg-main);
+  // color: #eee;
+  // overflow: hidden;
 }
 
 * {
@@ -22,6 +22,7 @@ body {
   &::-webkit-scrollbar {
     width: 10px;
     height: 10px;
+    z-index: 1000;
   }
   &::-webkit-scrollbar-thumb {
     height: 9px;
@@ -45,4 +46,12 @@ body {
 .window {
   width: 100vw;
   height: 100vh;
+}
+
+.watcher_list_wrapper {
+  background: aqua;
+}
+
+textarea {
+  field-sizing: content;
 }

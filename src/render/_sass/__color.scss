@@ -1,7 +1,9 @@
 $dark: #000;
+$bg-main: #212631;
 
 :root {
   --color: #{$dark};
+  --bg-main: #{$bg-main};
 }
 
 // .light-theme {

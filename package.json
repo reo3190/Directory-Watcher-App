@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "main": "dist/main.js",
   "scripts": {
+    "rebuild": "electron-rebuild -f -w better-sqlite3",
     "dev": "rimraf dist && run-p dev:webpack dev:electron",
     "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
     "dev:electron": "wait-on ./dist/index.html ./dist/main.js && electronmon .",
@@ -17,21 +18,25 @@
   "license": "ISC",
   "electronmon": {
     "patterns": [
-      "dist/**/*"
+      "dist/**/*",
+      "!dist/assets/**/*"
     ]
   },
   "build": {
     "productName": "SBL-DirectoryWatcherApp",
-    "appId": "com.sublimation.video-preview-app",
+    "appId": "com.sublimation.directory-watcher-app",
     "directories": {
       "output": "build/${version}/"
     },
     "files": [
       "dist",
       "node_modules",
-      "package.json"
+      "package.json",
+      "assets"
     ],
-    "extraResources": [],
+    "extraResources": [
+      "assets"
+    ],
     "win": {
       "icon": "assets/icon.ico",
       "target": "nsis",
@@ -49,6 +54,7 @@
   },
   "description": "",
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^22.13.17",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.2",
@@ -57,6 +63,7 @@
     "css-loader": "^7.1.2",
     "electron": "^33.2.1",
     "electron-builder": "^25.1.8",
+    "electron-rebuild": "^3.2.9",
     "electronmon": "^2.0.3",
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
@@ -74,6 +81,11 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@vanilla-extract/css": "^1.17.2",
+    "@vanilla-extract/webpack-plugin": "^2.3.19",
+    "better-sqlite3": "^11.10.0",
+    "chokidar": "^4.0.3",
+    "clsx": "^2.1.1",
     "electron-progressbar": "^2.2.1",
     "electron-updater": "^6.1.4",
     "react": "^18.2.0",
@@ -81,6 +93,8 @@
     "react-icons": "^5.4.0",
     "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^7.1.1",
-    "react-spring": "^9.7.5"
+    "react-select": "^5.10.1",
+    "react-spring": "^9.7.5",
+    "windows-shortcuts": "^0.1.6"
   }
 }

@@ -21,3 +21,8 @@ build
 
 assets
 
+src/ignore.ts
+
+package.json
+
+package-lock.json
