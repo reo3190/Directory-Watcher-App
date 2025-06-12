@@ -27,9 +27,10 @@ const DeletePop: FC<Props> = ({ log, pop, setDeletePop }) => {
 
   const msg = log.state != "delete" ? log.message : "**Deleted**";
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     if (!currWatcher) return;
-    window.electron.DeleteLog(currWatcher, log);
+    await window.electron.DeleteLog(currWatcher, log);
+    setDeletePop(false);
   };
 
   const handleOnDown = (e: React.MouseEvent) => {

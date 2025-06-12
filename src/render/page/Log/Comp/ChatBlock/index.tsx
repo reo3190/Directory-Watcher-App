@@ -33,9 +33,10 @@ const ChatBlock: FC<Props> = ({ log, time }) => {
     setEditLog(log);
   };
 
-  const handleDelete = () => {
-    if (!currWatcher) return;
-    window.electron.DeleteLog(currWatcher, log);
+  const handleDeletePop = () => {
+    if (log.state != "delete") {
+      setDeletePop(true);
+    }
   };
 
   return (
@@ -56,7 +57,7 @@ const ChatBlock: FC<Props> = ({ log, time }) => {
               className={ChatBlockCSS.block}
               data={{
                 handleEdit,
-                setDeletePop,
+                handleDeletePop,
               }}
             >
               <div className={ChatBlockCSS.massage}>{msg}</div>

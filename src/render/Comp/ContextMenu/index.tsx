@@ -5,7 +5,7 @@ import { ContextMenuBridge } from "../../../hook/ContextMenuBridge";
 import { MdEdit, MdDelete } from "react-icons/md";
 
 function ChatContextMenu() {
-  const { handleEdit, setDeletePop } = useContextMenu(ContextMenuBridge);
+  const { handleEdit, handleDeletePop } = useContextMenu(ContextMenuBridge);
 
   return (
     <>
@@ -14,7 +14,7 @@ function ChatContextMenu() {
           <ContextMenuOption onClick={() => handleEdit()}>
             <MdEdit size={"1.5rem"} /> 編集
           </ContextMenuOption>
-          <ContextMenuOption onClick={() => setDeletePop(true)}>
+          <ContextMenuOption onClick={() => handleDeletePop()}>
             <MdDelete size={"1.5rem"} /> 削除
           </ContextMenuOption>
         </>
