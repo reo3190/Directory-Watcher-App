@@ -108,6 +108,7 @@ const Popup: FC<Props> = ({ pop, setPopup }) => {
           <input
             className={PopupCSS.input}
             type="text"
+            spellCheck="false"
             placeholder="name..."
             value={newWatch.name}
             onChange={(e) =>
@@ -123,6 +124,7 @@ const Popup: FC<Props> = ({ pop, setPopup }) => {
           <input
             className={PopupCSS.input}
             type="text"
+            spellCheck="false"
             placeholder="path..."
             value={newWatch.path}
             onChange={(e) =>
